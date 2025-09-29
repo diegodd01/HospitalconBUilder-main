@@ -10,7 +10,7 @@ public class InMemoryRepository<T>{
         long id = idGenerator.incrementAndGet();
         try {
             String clase;
-            entity.getClass().getMethod("setID", Long.class).invoke(entity, id);
+            entity.getClass().getMethod("setId", Long.class).invoke(entity, id);
             clase = entity.getClass().getName();
             System.out.println(clase + " id:   " + id);
 
@@ -42,7 +42,9 @@ public class InMemoryRepository<T>{
         }
         return results;
     }
-
+    public Collection<T> findAll() {
+        return data.values();
+    }
     private String capitalize(String str) {
         if (str == null || str.isEmpty()) {
             return str;

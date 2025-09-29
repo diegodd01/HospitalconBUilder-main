@@ -15,11 +15,14 @@ import java.util.Objects;
 @ToString(exclude = {"paciente", "medico", "sala"})
 @Builder
 public class Cita implements Serializable {
+    @Setter
+    private Long id;
     private final Paciente paciente;
     private final Medico medico;
     private final Sala sala;
     private final LocalDateTime fechaHora;
     private final BigDecimal costo;
+
     @Setter
     private EstadoCita estado;
     @Setter

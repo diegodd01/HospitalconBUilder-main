@@ -1,6 +1,7 @@
 package entidades;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
@@ -11,7 +12,10 @@ import java.util.Objects;
 @Getter
 @ToString
 @SuperBuilder
+
 public abstract class Persona implements Serializable {
+    @Setter
+    private Long id;
     protected final String nombre;
     protected final String apellido;
     protected final String dni;
